@@ -38,22 +38,97 @@
     </div>
 
     <div class="item">
-            <h2>Constructor with prototypes Pattern</h2>
-            <p>
-                When an object is created, its definition is inherited froma  prototype. Weirdly, each prototype is also an object, so even prototypes  have prototypes. Except 
-                for object, which is the top-level prototype. The advantage to attaching functions to the prototypes is that only a single copy of the function is created; saving
-                on memory.
-            </p>
-        </div>
+        <h2>Constructor with prototypes Pattern</h2>
+        <p>
+            When an object is created, its definition is inherited froma  prototype. Weirdly, each prototype is also an object, so even prototypes  have prototypes. Except 
+            for object, which is the top-level prototype. The advantage to attaching functions to the prototypes is that only a single copy of the function is created; saving
+            on memory.
+        </p>
+    </div>
+
+    <div class="item">
+        <h2>Module Pattern</h2>
+        <p>
+            Modules are an integral piece of any robust application's architecture and typically help in keeping the units of code for a project both cleanly separated and organized.
+            The module pattern was originally defined as a way to provide both private and public encapsulation for classes in conventional software engineering. In javascript, the module
+            pattern is used for futher emulate the concept of classes in such a way that we're able to include both public/private variables inside a single object, thus shielding
+            particular parts from the global scope. What this results in a reduction in the likelihood of our function names conflicting with other functions defined in additional scripts
+            on the page.
+            <br>
+            The module Pattern encapsultaes "privacy", state and organization using closures. It provides a way of wrapping a mix of public and private methods and variables, protecting pieces
+            from leaking into the global scope and accidentally colliding with another developer's interface. With this patter we only return what we want and keep everything else within
+            the closure private. So, as we know in a way since variable can't technically be declared as being public nor private we use the function scope to emulate this concept.
+        </p>
+    </div>
+
+    <div class="item">
+        <h2>Singleton Pattern</h2>
+        <p>
+            The singleton Pattern is thus known because it restricts instantiation of a class to a single object. Classically the Singleton Pattern can be implemented by creating a class
+            with a method that creates a new instance of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object.
+        </p>
+    </div>
+
+    <div class="item">
+        <h2>Observer Pattern</h2>
+        <p>
+            The observer is a design Pattern where an object (known as a subject) mantains a list of objects depending on it (observers), automatically notifying them of any changes to state.
+            When a subject need to notify observers about something interesting happening it broadcast a notification to the observers (which can include specific data related to the topic
+            of the notification). When we no longer wish for a particular observer to be notified of the changes  by the subject  they are registered with, the subject can remove them from
+            the list of observers.
+        </p>
+    </div>
+
+    <div class="item" style="color: #ff0000">
+        <h2>Differences between Observer and Publish/Subscriber</h2>
+        <p>
+            <ul>
+                <li>
+                    The Observer Pattern requires that the observer (or object) wishing to recieve topic notifications must subscribe this interest to the object firing the event (the subject).
+                </li>
+                <li>
+                    The Publish/subscribe Pattern however uses a topic/Event channel which sits between the objects wishing to recieve notifications (subscribers) and the object firing the 
+                    event (The publisher). This event system allows code to define application specific events which can pass custom arguments containing values needed by the subscriber. The idea
+                    here is to avoid dependencies between the publisher and the subscriber.
+                    <br>
+                    This differs from the Observer Pattern as it allows any subscriber implementing an appropiate event handler to register for and recieve topic notifications broadcast by the publisher.
+                </li>
+            </ul>
+            <h3>Advantages and sisadvantages</h3>
+            <ul>
+                <li>
+                    The observer and Publisher/subscriber Patterns encourage us to think hard about  the relationships between different parts of our application. They also help us identify
+                    what layers containing direct relationships which could be replaced with sets of our subjects and observers. This effectively could be used to break down an application
+                    into smaller, more loosely coupled blocks to improve code management and potential for reuse.
+                </li>
+                <li>
+                    A draw-back of the publisher/subscriber pattern is that subscribersare quiet ignorant  to the existence of each other and are blind to the cost of switching publishers.
+                    Due to the dynamic relationship between subscribers and publishers, the update dependency can be difficult to track.                    
+                </li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="item">
+        <h2>The mediattor Pattern</h2>
+        <p>
+            A real world anology of teh mediattor Pattern could be a typical airport traffic control system. A tower (Mediator) handles whta planes can take off  and land because all
+            communications (notifications being listened out for our boradcast) are done from the planes to the control tower, rather than from plane to plane. A centralized controller 
+            is key to success of this system and that's really the role mediator plays in software design.
+        </p>
+    </div>
+
+
 
     <div class="item">
         <p>
             Constructor Pattern [X]<br/>
             Constructor with prototypes Pattern [X]<br/>
-            Modules Pattern []<br/>
-            Singleton Pattern []<br/>
-            Observer Pattern []<br/>
-            Publisher/Subscriber []<br/>
+            Modules Pattern [X]<br/>
+            Singleton Pattern [X]<br/>
+            Observer Pattern [X]<br/>
+            Publisher/Subscriber [-]<br/>
+            Mediator Pattern [-]<br/>
             Prototype Pattern []<br/>
             Command Pattern []<br/>
             Facade Pattern []<br/>
