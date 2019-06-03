@@ -79,8 +79,8 @@
         </p>
     </div>
 
-    <div class="item" style="color: #ff0000">
-        <h2>Differences between Observer and Publish/Subscriber</h2>
+    <div class="item">
+        <h2>Publish/Subscriber Pattern and differences between them </h2>
         <p>
             <ul>
                 <li>
@@ -94,7 +94,7 @@
                     This differs from the Observer Pattern as it allows any subscriber implementing an appropiate event handler to register for and recieve topic notifications broadcast by the publisher.
                 </li>
             </ul>
-            <h3>Advantages and sisadvantages</h3>
+            <h3>Advantages and disadvantages</h3>
             <ul>
                 <li>
                     The observer and Publisher/subscriber Patterns encourage us to think hard about  the relationships between different parts of our application. They also help us identify
@@ -104,6 +104,9 @@
                 <li>
                     A draw-back of the publisher/subscriber pattern is that subscribersare quiet ignorant  to the existence of each other and are blind to the cost of switching publishers.
                     Due to the dynamic relationship between subscribers and publishers, the update dependency can be difficult to track.                    
+                </li>
+                <li>
+                    Implementation: https://www.youtube.com/watch?v=5wylV5in9qg
                 </li>
             </ul>
         </p>
@@ -116,6 +119,71 @@
             communications (notifications being listened out for our boradcast) are done from the planes to the control tower, rather than from plane to plane. A centralized controller 
             is key to success of this system and that's really the role mediator plays in software design.
         </p>
+        <b>Implementation: https://www.dofactory.com/javascript/mediator-design-pattern</b>
+    </div>
+
+    <div class="item">
+        <h2>The Prototype Pattern</h2>
+        <p>
+            The GoF refer to the prototype pattern as one which creates objects based on a template of an existinf object through cloning. 
+            We can think of the prototype Pattern as being based on prototypal inheritance where we create objects which act as prototypes for
+            other objects. The prototype object itself is effectively used as a blueprint for each object the constructor creates. If the prototype
+            of the constructor function used contains a property called name for example, then each object created by the same constructor will also
+            have this same property. <br>
+            Reviewing the definitions for this pattern in existing literature, we may find references to classes once again. The reality is that prototypal
+            inheritance avoids using classes altogether. There isn't a deifnition object nor a core object in theory. We're simply creatung copies of
+            existing functional objects.
+        </p>
+    </div>
+
+    <div class="item">
+        <h2>The Command Pattern</h2>
+        The command pattern aims to encapsultae method invocation, request or operations into a single object and gives us the ability to both parameterize
+        and pass method calls around that can be executed at our discretion. In addition, it enables us to decouple objects invoking the action from other 
+        objects which implement them. giving us a greater degree of overall flexibility in swapping out cocrete classes.
+    </div>
+
+    <div class="item">
+        <h2>The Facade Pattern</h2>
+        This pattern provides a convenient higher-level interface to a larger body of code, hiding its true complexity. Think of it as simplifying the API
+        being presented to other developers, something which almost always improves usability.
+    </div>
+
+    <div class="item">
+        <h2>The Factory Pattern</h2>
+        The Factory Pattern is another creational pattern concerned with the notion of creating objects. where it differs from the other patterns in
+        it's category is that it doesn't explicitly require us to use a contructor instead, a factory pattern can provide a generic interface for 
+        creating objects we can specify the type of factory object we wish to be created.
+        <h3>When to use the factory Pattern</h3>
+        <ul>
+            <li>When our object or component setup involves high level of complexity</li>
+            <li>When we need to easily generate different instances of objects depending on the environment we are in</li>
+            <li>When we're working with many small objects or components that share the same properties</li>
+            <li>When composing objects with instances of other ojects that need only satisfy an API contract to work. This is useful for decoupling</li>
+        </ul>
+        <h3>When not to use it</h3>
+        <ul>
+            when applied to the wrong type of problem, this pattern can introduce an unnecessarily great deal of complexity to an application, 
+            Unless providing an interface for object creation is a design goal for the library or framework we are writing, I would suggest sticking to
+            explicit constructors to avoid the unnecesary overhead.
+        </ul>
+    </div>
+
+    <div class="item">
+        <h2>The Mixin Pattern</h2>
+        <h4>Sub-classing:</h4>
+        Is a term that refers to inheriting properties for a new object from a base or supperclass object. In traditional object-oriented programming, 
+        a class B is able to extend another class A. Here we consider A a superclass and B subclass of A. As such, all instances of B inherit the methods
+        from A, B is however still able to define it's own methods, including those that overrides methods originally defined by A.
+        <h4>Mixins</h4>
+        Mixins allow objects to borrow (or inherit) functionality from them with a minimal amount of complexity. As the pattern works well with Javascript
+        object prototypes, it gives us a fairly flexible way to share functionality from not just one Mixin, but effectively many through multiple inheritance.
+        They can be viewed as objects with attributes and methods that can be easily shared across a number of other objects prototypes.
+    </div>
+
+    <div class="item">
+        <h2>The Decorator Pattern</h2>
+        
     </div>
 
 
@@ -129,10 +197,11 @@
             Observer Pattern [X]<br/>
             Publisher/Subscriber [-]<br/>
             Mediator Pattern [-]<br/>
-            Prototype Pattern []<br/>
-            Command Pattern []<br/>
-            Facade Pattern []<br/>
-            Mixins Pattern []<br/>
+            Prototype Pattern [-]<br/>
+            Command Pattern [?]<br/>
+            Facade Pattern [-]<br/>
+            Factory Pattern [X]<br/>
+            Mixins Pattern [-]<br/>
             Decorator Pattern []<br/>
             MVC Pattern []<br/>
             MVP Pattern []<br/>
