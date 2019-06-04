@@ -188,6 +188,50 @@
         itself wasn't essential to the base functionality of the class, otherwise it would be baked into the superclass itself.
     </div>
 
+    <div class="item">
+        <h2>The MVC Pattern</h2>
+        MVC is an architectural design pattern that encourages improved application organization through a separation of concerns. It enforces the isolation of 
+        business data (Models) from user interfaces (vIews), with a third component (Controllers) traditionally managing logic and user-input. The pattern was
+        originally designed by Trygve Reenskaug.
+        <ul>
+            <li>
+                <b>Models: </b> Models manage the data of an application. They are concerned with neither the user-interface nor presentation layer but instead represent
+                unique forms of data than an application may require. When a model changes (e.g. when it is updated), it will typically notify its observers (e.g. views,
+                a concept we will cover shortly) that a change has occurred so that they may react accordingly.
+            </li>
+            <li>
+                <b>Views: </b>
+                Views are a visual representation of models that present a filtered view of their current state. A view typically observs a model and is notified when the model
+                changes, allowing the view to update itself accordingly.
+            </li>
+            <li>
+                <b>Controllers: </b>
+                Controllers are an intermediary between models and views which are clasically responsible for updating the model when the user manipulates the view.
+            </li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <h2>The MVP Pattern</h2>
+        <p>
+            Model-View-Presenter (MVP) is a derivative of the MVC design pattern which focuses on improving presentation logic. The P in MVP stands for presenter. 
+            It's a component which  contains the user-interface business logic for the view. Unlike the MVC, invocations from the view are delegated to the presenter
+            which are decoupled from the view and instead talk to it through an interface. This allows for all kinds of useful things such as being able to mock views in unit test.
+            <br>
+            The most common implementation of MVP is one which uses a pasive view (a view which is for all intent and purposes "dumb"), containing little to no logic. If MVC and MVP
+            are different it is because the C and the P do different things. In MVP, the P observers models and updates views when models change. The P effectively binds the models to
+            views, a responsibility which was previously held by controllers in MVC.
+            <br>
+            Solicited by a view, presenters perform any work to do with the user request and pass data back to them. In this respect, they retrieve data manipulate it and determine 
+            how the data should be displayed in the view. In some implementations, the presenter also interacts with a service layer to persist data (models). Models may trigger events but 
+            it's the presenters role to subscribe to them so that it can update the view. In the passive architecture, we have no concept of direct data binding. views expose 
+            setters which presenters can use to set data.
+            <br>
+            The benefit of this change from MVC is taht increases the testability of our application and provides a more clean separation between the view and the model.
+            This isn't however without its cost as the lack of data binding support in the pattern can often mean having to take care of this task separately.
+        </p>
+    </div>
+
 
 
     <div class="item">
@@ -204,9 +248,9 @@
             Facade Pattern [-]<br/>
             Factory Pattern [X]<br/>
             Mixins Pattern [-]<br/>
-            Decorator Pattern []<br/>
-            MVC Pattern []<br/>
-            MVP Pattern []<br/>
+            Decorator Pattern [X]<br/>
+            MVC Pattern [-]<br/>
+            MVP Pattern [-]<br/>
             MVVM Pattern []<br/>
             AMD Pattern []<br/>
         </p>
